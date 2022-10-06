@@ -39,15 +39,15 @@ public:
     }
     void SetNumerator(int value) { numerator = value; }
     void SetDenominator(int value) { denominator == 0 ? 1 : value; }
-    int GetNumerator() { return numerator; }
-    int GetDenominator() { return denominator; }
+    int GetNumerator() const { return numerator; }
+    int GetDenominator() const { return denominator; }
 
-    void Print()
+    void Print() const
     {
         cout << "[" << numerator << "/" << denominator << "]";
     }
 
-    Fraction Add(Fraction f)
+    Fraction Add(const Fraction& f)
     {
         Fraction res;
         res.numerator = this->numerator * f.denominator + this->denominator * f.numerator;
@@ -55,7 +55,7 @@ public:
         return res;
     }
 
-    Fraction Del(Fraction f)
+    Fraction Del(Fraction& f)
     {
         Fraction res;
         res.numerator = this->numerator * f.denominator - this->denominator * f.numerator;
@@ -96,6 +96,12 @@ int main()
         f2(4, 5),
         f3(3, 7);
 
+    f2.Print();
+    cout << "\n";
+    f1.Add(f2);
+    f2 = f1.Mult(f3);
+    cout << "\n";
+
     /*f1.Print();
     cout << "\n";
     
@@ -106,9 +112,9 @@ int main()
     /*f3.Print();
     cout << "\n";*/
 
-    f1.Add(f2).Mult(f3).Del(f1).Div(*(new Fraction(5, 8))).Print();
+    //f1.Add(f2).Mult(f3).Del(f1).Div(*(new Fraction(5, 8))).Print();
 
-
+    //cout << sizeof(Fraction);
 
 
 
