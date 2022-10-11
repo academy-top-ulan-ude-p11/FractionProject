@@ -28,10 +28,19 @@ int main()
         f2(4, 5),
         f3(3, 7);
 
-    f2.Print();
+    f1.Add(f2).Print();
+    cout << "\n";
+    (f1 + f2).Print(); // f1.operator+(f2)
+    cout << "\n";
+    //f1.operator+(f2).Print();
+    //cout << "\n";
+    (f1 + 4).Print();
+    cout << "\n";
+    (4 + f1).Print();
+    /*f2.Print();
     cout << "\n";
     f1.Add(f2).Div(f3).Print();
-    f2 = f1.Mult(f3);
+    f2 = f1.Mult(f3);*/
     cout << "\n";
 
     /*f1.Print();
@@ -47,9 +56,7 @@ int main()
     //f1.Add(f2).Mult(f3).Del(f1).Div(*(new Fraction(5, 8))).Print();
 
     //cout << sizeof(Fraction);
-
-
-
+    
     // A & B classes
     /*A a;
     a.MethodA().MethodB();*/

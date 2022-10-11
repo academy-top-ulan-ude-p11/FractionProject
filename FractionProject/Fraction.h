@@ -21,5 +21,15 @@ public:
     Fraction Del(Fraction& f);
     Fraction Mult(Fraction f);
     Fraction Div(Fraction f);
+
+    //Fraction operator+(const Fraction& f);
+    //Fraction operator+(int n);
+    friend Fraction operator+(const Fraction& f1, const Fraction& f2);
+    friend Fraction operator+(const Fraction f, int n);
+    friend Fraction operator+(int n, const Fraction f);
+    friend Fraction operator+(const Fraction f, double n);
+    friend Fraction operator+(double n, const Fraction f);
+
+    friend bool operator>(const Fraction& f1, const Fraction& f2);
 };
 
