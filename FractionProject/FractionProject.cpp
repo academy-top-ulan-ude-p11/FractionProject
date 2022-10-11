@@ -98,7 +98,7 @@ int main()
 
     f2.Print();
     cout << "\n";
-    f1.Add(f2);
+    f1.Add(f2).Div(f3).Print();
     f2 = f1.Mult(f3);
     cout << "\n";
 
