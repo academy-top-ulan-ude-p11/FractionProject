@@ -21,12 +21,6 @@ public:
     }
 };
 
-
-
-
-
-
-
 int main()
 {
     Fraction 
