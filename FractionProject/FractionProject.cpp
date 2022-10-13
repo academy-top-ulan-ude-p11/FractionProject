@@ -28,15 +28,15 @@ int main()
         f2(4, 5),
         f3(3, 7);
 
-    f1.Add(f2).Print();
-    cout << "\n";
-    (f1 + f2).Print(); // f1.operator+(f2)
-    cout << "\n";
-    //f1.operator+(f2).Print();
+    //f1.Add(f2).Print();
     //cout << "\n";
-    (f1 + 4).Print();
-    cout << "\n";
-    (4 + f1).Print();
+    //(f1 + f2).Print(); // f1.operator+(f2)
+    //cout << "\n";
+    ////f1.operator+(f2).Print();
+    ////cout << "\n";
+    //(f1 + 4).Print();
+    //cout << "\n";
+    //(4 + f1).Print();
     /*f2.Print();
     cout << "\n";
     f1.Add(f2).Div(f3).Print();
@@ -60,4 +60,31 @@ int main()
     // A & B classes
     /*A a;
     a.MethodA().MethodB();*/
+    
+    /*(f1++).Print();
+    f1.Print();*/
+
+    /*int n = 5;
+    int a = 10 + n++;
+    cout << n << "\n";
+    n = 5;
+    int b = 10 + ++n;
+    cout << a << " " << b << "\n";*/
+
+    f1.Print();
+    cout << " + ";
+    f2.Print();
+    cout << " = ";
+    (f1 + f2).Print();
+    cout << "\n";
+
+    cout << f1 << " + " << f2 << " = " << (f1 + f2) << "\n";
+
+
+
+    Fraction f4;
+    int a, b;
+
+    cin >> a >> f4 >> b;
+    cout << a << " " << f4 << " " << b << "\n";
 }

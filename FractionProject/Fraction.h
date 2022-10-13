@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 class Fraction
 {
     int numerator;
@@ -30,6 +31,24 @@ public:
     friend Fraction operator+(const Fraction f, double n);
     friend Fraction operator+(double n, const Fraction f);
 
+    friend Fraction operator-(const Fraction& f1, const Fraction& f2);
+    Fraction operator-();
+    double operator+();
+    bool operator!();
+
+    Fraction operator++(); // prefix: ++f
+    Fraction operator++(int); // postfix : f++
+
     friend bool operator>(const Fraction& f1, const Fraction& f2);
+    friend bool operator<=(const Fraction& f1, const Fraction& f2);
+
+    friend bool operator<(const Fraction& f1, const Fraction& f2);
+    friend bool operator>=(const Fraction& f1, const Fraction& f2);
+
+    friend bool operator==(const Fraction& f1, const Fraction& f2);
+    friend bool operator!=(const Fraction& f1, const Fraction& f2);
+
+    friend std::ostream& operator<<(std::ostream& out, const Fraction& f);
+    friend std::istream& operator>>(std::istream& in, Fraction& f);
 };
 

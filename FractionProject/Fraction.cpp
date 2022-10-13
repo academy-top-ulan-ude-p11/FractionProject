@@ -50,6 +50,37 @@ Fraction Fraction::Div(Fraction f)
     return res;
 }
 
+Fraction Fraction::operator-()
+{
+    this->numerator = -this->numerator;
+    return *this;
+}
+
+double Fraction::operator+()
+{
+    return (double)this->numerator / this->denominator;
+}
+
+bool Fraction::operator!()
+{
+    return !(this->numerator == 0);
+}
+
+Fraction Fraction::operator++()
+{
+    this->numerator += this->denominator;
+    return *this;
+    /*Fraction res(this->numerator + this->denominator, this->denominator);
+    return res;*/
+}
+
+Fraction Fraction::operator++(int)
+{
+    Fraction res(this->numerator, this->denominator);
+    this->numerator += this->denominator;
+    return res;
+}
+
 //Fraction Fraction::operator+(const Fraction& f)
 //{
 //    /*Fraction res;
@@ -76,4 +107,59 @@ Fraction operator+(const Fraction& f1, const Fraction& f2)
     return res;
 
     //return f1.Add(f2);
+}
+
+// non friend function overloading opertaors:
+//Fraction operator*(const Fraction& f1, const Fraction& f2)
+//{
+//    Fraction res;
+//    res.SetNumerator(f1.GetNumerator() * f2.GetDenominator());
+//    res.SetDenominator(f1.GetDenominator() * f2.GetNumerator());
+//    return res;
+//}
+
+bool operator>(const Fraction& f1, const Fraction& f2)
+{
+    return f1.numerator * f2.denominator > f2.numerator * f1.denominator;
+}
+
+bool operator<=(const Fraction& f1, const Fraction& f2)
+{
+    //return f1.numerator * f2.denominator <= f2.numerator * f1.denominator;
+    return !(operator>(f1, f2));
+}
+
+bool operator<(const Fraction& f1, const Fraction& f2)
+{
+    return f1.numerator * f2.denominator < f2.numerator * f1.denominator;
+}
+
+bool operator>=(const Fraction& f1, const Fraction& f2)
+{
+    //return f1.numerator * f2.denominator >= f2.numerator * f1.denominator;
+    return !(operator<(f1, f2));
+}
+
+bool operator==(const Fraction& f1, const Fraction& f2)
+{
+    return f1.numerator * f2.denominator == f2.numerator* f1.denominator;
+}
+
+bool operator!=(const Fraction& f1, const Fraction& f2)
+{
+    //return f1.numerator * f2.denominator != f2.numerator * f1.denominator;
+    return !(operator==(f1, f2));
+}
+
+std::ostream& operator<<(std::ostream& out, const Fraction& f)
+{
+    out << "[" << f.numerator << "/" << f.denominator << "]";
+    return out;
+}
+
+std::istream& operator>>(std::istream& in, Fraction& f)
+{
+    in >> f.numerator;
+    in >> f.denominator;
+    return in;
 }
