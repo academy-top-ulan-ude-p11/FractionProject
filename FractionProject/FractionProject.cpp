@@ -25,7 +25,7 @@ int main()
 {
     Fraction 
         f1(2, 3),
-        f2(4, 5),
+        f2(1, 2),
         f3(3, 7);
 
     //f1.Add(f2).Print();
@@ -41,7 +41,7 @@ int main()
     cout << "\n";
     f1.Add(f2).Div(f3).Print();
     f2 = f1.Mult(f3);*/
-    cout << "\n";
+    //cout << "\n";
 
     /*f1.Print();
     cout << "\n";
@@ -71,7 +71,7 @@ int main()
     int b = 10 + ++n;
     cout << a << " " << b << "\n";*/
 
-    f1.Print();
+    /*f1.Print();
     cout << " + ";
     f2.Print();
     cout << " = ";
@@ -86,5 +86,14 @@ int main()
     int a, b;
 
     cin >> a >> f4 >> b;
-    cout << a << " " << f4 << " " << b << "\n";
+    cout << a << " " << f4 << " " << b << "\n";*/
+
+
+    // overloading typecast
+    double y = 1.5;
+
+    cout << y + (double)f2;
+
+
+
 }

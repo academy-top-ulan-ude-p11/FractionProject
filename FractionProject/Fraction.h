@@ -29,7 +29,7 @@ public:
     friend Fraction operator+(const Fraction f, int n);
     friend Fraction operator+(int n, const Fraction f);
     friend Fraction operator+(const Fraction f, double n);
-    friend Fraction operator+(double n, const Fraction f);
+    //friend Fraction operator+(double n, const Fraction f);
 
     friend Fraction operator-(const Fraction& f1, const Fraction& f2);
     Fraction operator-();
@@ -50,5 +50,7 @@ public:
 
     friend std::ostream& operator<<(std::ostream& out, const Fraction& f);
     friend std::istream& operator>>(std::istream& in, Fraction& f);
+
+    operator double();
 };
 

@@ -81,6 +81,11 @@ Fraction Fraction::operator++(int)
     return res;
 }
 
+Fraction::operator double()
+{
+    return (double)this->numerator / this->denominator;
+}
+
 //Fraction Fraction::operator+(const Fraction& f)
 //{
 //    /*Fraction res;
@@ -107,6 +112,18 @@ Fraction operator+(const Fraction& f1, const Fraction& f2)
     return res;
 
     //return f1.Add(f2);
+}
+
+Fraction operator+(const Fraction f, double n)
+{
+    Fraction n1;
+    n1.numerator = (int)n * f.denominator;
+    n1.denominator = f.denominator;
+    Fraction n2;
+    n2.numerator = (n - (int)n) * 100;
+    n2.denominator = 100;
+    n1 = n1 + n2;
+    return (f + n1);
 }
 
 // non friend function overloading opertaors:
