@@ -21,12 +21,19 @@ public:
     }
 };
 
+
+Fraction NegativeFraction(Fraction f)
+{
+    f.SetNumerator(-f.GetNumerator());
+    return f;
+}
+
 int main()
 {
-    Fraction 
+    /*Fraction 
         f1(2, 3),
         f2(1, 2),
-        f3(3, 7);
+        f3(3, 7);*/
 
     //f1.Add(f2).Print();
     //cout << "\n";
@@ -90,10 +97,17 @@ int main()
 
 
     // overloading typecast
-    double y = 1.5;
+    /*double y = 1.5;
 
-    cout << y + (double)f2;
+    cout << y + (double)f2;*/
 
 
+    Fraction fEmpty;
+    cout << fEmpty << "\n";
+    Fraction fOne(5);
+    cout << fOne << "\n";
+    Fraction fOne2 = Fraction(5);
+    cout << fOne2 << "\n";
 
+    cout << NegativeFraction(10) << "\n";
 }

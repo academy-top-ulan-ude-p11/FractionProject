@@ -11,7 +11,15 @@ public:
     {
         if (denominator == 0)
             denominator = 1;
+        std::cout << this << " fraction construct\n";
     }
+
+    Fraction(const Fraction& fobj) 
+        : numerator{ fobj.numerator }, denominator{ fobj.denominator } 
+    {
+        std::cout << this << " fraction copy construct\n";
+    }
+
     void SetNumerator(int value);
     void SetDenominator(int value);
     int GetNumerator() const;
